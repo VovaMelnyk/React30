@@ -6,7 +6,7 @@ const Wrapper = () => {
   return (
     <Container>
       <Sidebar></Sidebar>
-      <Main></Main>
+      <Main />
     </Container>
   );
 };

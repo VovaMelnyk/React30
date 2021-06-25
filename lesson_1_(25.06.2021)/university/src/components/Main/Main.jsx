@@ -1,11 +1,11 @@
-import React from 'react'
-
+import React from "react";
+import Info from "../Info/Info";
 function Main() {
-    return (
-        <main>
-            
-        </main>
-    )
+  return (
+    <main>
+      <Info />
+    </main>
+  );
 }
 
-export default Main
+export default Main;
