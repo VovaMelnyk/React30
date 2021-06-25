@@ -8,3 +8,17 @@ React snipets
 7) prop-types
 8) conditional render
 
+
+Wrapper
+Paper
+Sidebar
+    header
+    menu
+    userInfo
+Main
+    Info
+        Card
+        Description
+    tutors
+    cities
+    departments
