@@ -52,6 +52,7 @@ export default class Cities extends Component {
   state = {
     isShow: false,
     cities: data.cities,
+    inputValue: "",
   };
 
   handlerClick = () => {
@@ -60,14 +61,24 @@ export default class Cities extends Component {
     }));
   };
 
-  addCity = () => {
+  handleChange = ({ target }) => {
+    const value = target.value;
+    this.setState({
+      inputValue: value,
+    });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
     this.setState((prev) => ({
-      cities: [...prev.cities, "Ню йорк"],
+      cities: [...prev.cities, this.state.inputValue],
+      inputValue: "",
+      isShow: false,
     }));
   };
 
   render() {
-    const { isShow, cities } = this.state;
+    const { isShow, cities, inputValue } = this.state;
     return (
       <Container>
         <Box>
@@ -75,10 +86,15 @@ export default class Cities extends Component {
           <Title>Города</Title>
         </Box>
         <CitiesList cities={cities} />
-        <Button text={"Добавить город"} onClick={this.addCity} />
+        <Button text={"Добавить город"} onClick={this.handlerClick} />
         {isShow && (
-          <Form>
-            <input type="text" />
+          <Form onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              value={inputValue}
+              name="city"
+              onChange={this.handleChange}
+            />
           </Form>
         )}
       </Container>
