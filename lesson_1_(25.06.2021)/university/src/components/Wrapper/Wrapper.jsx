@@ -5,7 +5,7 @@ import { Container } from "./Wrapper.styles";
 const Wrapper = () => {
   return (
     <Container>
-      <Sidebar></Sidebar>
+      <Sidebar />
       <Main />
     </Container>
   );

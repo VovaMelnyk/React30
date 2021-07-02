@@ -2,11 +2,7 @@ import Wrapper from "./components/Wrapper/Wrapper";
 import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <Wrapper></Wrapper>
-    </div>
-  );
+  return <Wrapper />;
 }
 
 export default App;

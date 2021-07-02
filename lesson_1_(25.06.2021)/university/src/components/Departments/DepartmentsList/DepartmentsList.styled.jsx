@@ -2,9 +2,9 @@ import styled from "@emotion/styled";
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 144px auto;
-  grid-column-gap: 32px;
-  margin-bottom: 32px;
+  grid-template-columns: repeat(3, minmax(auto, 370px));
+  grid-column-gap: 24px;
+  margin-bottom: 24px;
 `;
 
 export const Text = styled.p`

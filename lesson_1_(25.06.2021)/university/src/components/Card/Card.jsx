@@ -11,15 +11,15 @@ function Card({ name }) {
       <OrganizationType>университет</OrganizationType>
       <Name>{name}</Name>
       <Actions>
-        <HiPencilAlt size={16} />
-        <HiTrash size={16} />
+        <HiPencilAlt size={24} />
+        <HiTrash size={24} />
       </Actions>
     </Paper>
   );
 }
 
 Card.propTypes = {
-    name: PropTypes.string.isRequired,
-}
+  name: PropTypes.string.isRequired,
+};
 
 export default Card;
