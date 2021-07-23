@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import data from "../../../data/university.json";
 import {
   Container,
@@ -15,7 +16,9 @@ function TutorsList() {
       {tutors.map((tutor) => (
         <Item key={tutor.email}>
           <ItemInfo>
-            {tutor.lastName} {tutor.firstName} {tutor.patronymic}
+            <Link to={`/tutors/${tutor.id}`}>
+              {tutor.lastName} {tutor.firstName} {tutor.patronymic}
+            </Link>
           </ItemInfo>
           <ItemContacts>
             <ItemContact>{tutor.phone}</ItemContact>

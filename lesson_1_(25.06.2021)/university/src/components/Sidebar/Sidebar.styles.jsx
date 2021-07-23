@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { NavLink } from "react-router-dom";
 
 export const Aside = styled.aside`
   background-color: #fff;
@@ -30,6 +31,10 @@ export const MenuItem = styled.li`
     width: 24px;
     height: 24px;
   }
+
+  & .active span {
+    color: #ff6b0a;
+  }
 `;
 
 export const Text = styled.span`
@@ -41,4 +46,8 @@ export const Text = styled.span`
   &:hover {
     color: #ff6b0a;
   }
+`;
+
+export const Link = styled(NavLink)`
+  text-decoration: none;
 `;
