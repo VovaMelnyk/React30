@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTodo } from "../../redux/actions/todo";
 import "./Form.css";
 
 const formInitialState = {
@@ -9,6 +11,7 @@ const formInitialState = {
 };
 const HookForm = () => {
   const [form, setForm] = useState(formInitialState);
+  const dispatch = useDispatch();
 
   const inputHandler = (e) => {
     const name = e.target.name;
@@ -19,6 +22,7 @@ const HookForm = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    dispatch(addTodo(form));
   };
   const { title, author, priority, agree } = form;
   return (

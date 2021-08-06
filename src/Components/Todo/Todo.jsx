@@ -1,4 +1,5 @@
 import React from "react";
+import { BsTrashFill } from "react-icons/bs";
 import "./Todo.css";
 const Todo = ({ status, title, author, priority, id, index }) => {
   const deleteItem = () => {};
@@ -15,7 +16,7 @@ const Todo = ({ status, title, author, priority, id, index }) => {
         <p className={`Todo__author ${status && "done"}`}>{author}</p>
       </div>
       <span className="Todo__remove" onClick={deleteItem}>
-        <i className="fas fa-trash" />
+        <BsTrashFill />
       </span>
     </div>
   );

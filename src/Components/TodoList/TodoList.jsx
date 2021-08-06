@@ -1,18 +1,19 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import Todo from "../Todo/Todo";
 import Form from "../Form/Form";
 import "./TodoList.css";
 
 const TodoList = () => {
-  const todoList = [];
+  const todos = useSelector((state) => state.todo);
 
   return (
     <div className="TodoList">
       <h1 className="TodoList__title">Todo List</h1>
       <Form />
       <ul className="TodoList__todos">
-        {todoList.length ? (
-          todoList.map((todo, index) => (
+        {todos.length ? (
+          todos.map((todo, index) => (
             <li key={todo.id}>
               <Todo {...todo} index={index} />
             </li>
