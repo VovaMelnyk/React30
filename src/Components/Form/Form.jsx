@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { nanoid } from "nanoid";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../../redux/actions/todo";
+// import { addTodo } from "../../redux/actions/todo";
+import { addTodo } from "../../redux/slices/todo";
 import "./Form.css";
 
 const formInitialState = {
@@ -22,7 +24,9 @@ const HookForm = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    form.id = nanoid();
     dispatch(addTodo(form));
+    setForm(formInitialState);
   };
   const { title, author, priority, agree } = form;
   return (

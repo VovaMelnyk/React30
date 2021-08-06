@@ -1,8 +1,15 @@
 import React from "react";
 import { BsTrashFill } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+// import { deleteTodo } from "../../redux/actions/todo";
+import { deleteTodo } from "../../redux/slices/todo";
 import "./Todo.css";
 const Todo = ({ status, title, author, priority, id, index }) => {
-  const deleteItem = () => {};
+  const dispatch = useDispatch();
+
+  const deleteItem = () => {
+    dispatch(deleteTodo(id));
+  };
 
   const updateItem = () => {};
 

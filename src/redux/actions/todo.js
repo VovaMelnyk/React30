@@ -1,6 +1,11 @@
-import { ADD_TODO } from "../types";
+import { ADD_TODO, DELETE_TODO } from "../types";
 
-export const addTodo = (task) => ({
+export const addTodo = (formData) => ({
   type: ADD_TODO,
-  payload: task,
+  payload: formData,
+});
+
+export const deleteTodo = (id) => ({
+  type: DELETE_TODO,
+  payload: id,
 });
