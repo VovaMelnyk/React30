@@ -11,13 +11,13 @@ export const deleteTodo = (id) => ({
   payload: id,
 });
 
-export const setTodo = (todos) => ({
+export const setTodo = (todoList) => ({
   type: SET_TODO,
-  payload: todos,
+  payload: todoList,
 });
 
-export const fetchTodo = () => (dispatch) => {
-  axios
-    .get("http://localhost:7777/task")
-    .then((result) => dispatch(setTodo(result.data)));
+export const fetchTodo = () => async (dispatch) => {
+  const result = await axios.get("http://localhost:7777/tasks");
+  console.log(`result`, result);
+  dispatch(setTodo(result.data));
 };

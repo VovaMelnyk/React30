@@ -1,21 +1,5 @@
 {
-  "task": [
-    {
-      "title": "Learn JS",
-      "author": "User",
-      "priority": "High",
-      "agree": true,
-      "status": false,
-      "id": 1
-    },
-    {
-      "title": "Learn react",
-      "author": "User2",
-      "priority": "Medium",
-      "agree": true,
-      "status": false,
-      "id": 2
-    },
+  "tasks": [
     {
       "title": "1111111",
       "author": "222222",
@@ -29,6 +13,12 @@
       "priority": "High",
       "agree": true,
       "id": "z99oh2vqKJhh_Uia7b144"
+    }
+  ],
+  "users": [
+    {
+      "name": "Bob",
+      "age": 25
     }
   ]
 }

@@ -3,17 +3,20 @@ import { useSelector, useDispatch } from "react-redux";
 import Todo from "../Todo/Todo";
 import Form from "../Form/Form";
 import "./TodoList.css";
-import { getTodos } from "../../redux/slices/todo";
-// import { fetchTodo } from "../../redux/actions/todo";
+import { fetchTodoList, getTodos } from "../../redux/slices/todo";
+import { fetchTodo } from "../../redux/actions/todo";
 
 const TodoList = () => {
-  const todos = useSelector((state) => state.todo);
+  const todos = useSelector((state) => state.todo.items);
   const dispatch = useDispatch();
 
   useEffect(() => {
     // dispatch(fetchTodo());
-    dispatch(getTodos());
+    dispatch(fetchTodoList());
   }, [dispatch]);
+
+  const filterTodo = (array, filterItem) =>
+    array.filter((el) => el.status === filterItem);
 
   return (
     <div className="TodoList">
@@ -21,7 +24,7 @@ const TodoList = () => {
       <Form />
       <ul className="TodoList__todos">
         {todos.length ? (
-          todos.map((todo, index) => (
+          filterTodo(todos, "compleated").map((todo, index) => (
             <li key={todo.id}>
               <Todo {...todo} index={index} />
             </li>
