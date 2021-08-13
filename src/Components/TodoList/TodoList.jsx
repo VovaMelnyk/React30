@@ -1,11 +1,19 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Todo from "../Todo/Todo";
 import Form from "../Form/Form";
 import "./TodoList.css";
+import { getTodos } from "../../redux/slices/todo";
+// import { fetchTodo } from "../../redux/actions/todo";
 
 const TodoList = () => {
   const todos = useSelector((state) => state.todo);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    // dispatch(fetchTodo());
+    dispatch(getTodos());
+  }, [dispatch]);
 
   return (
     <div className="TodoList">

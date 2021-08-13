@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { nanoid } from "nanoid";
 import { useDispatch } from "react-redux";
-// import { addTodo } from "../../redux/actions/todo";
-import { addTodo } from "../../redux/slices/todo";
+import { addTodo } from "../../redux/actions/todo";
+// import { addTodo } from "../../redux/slices/todo";
 import "./Form.css";
+import { addTodos } from "../../redux/slices/todo";
 
 const formInitialState = {
   title: "",
@@ -25,7 +26,7 @@ const HookForm = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     form.id = nanoid();
-    dispatch(addTodo(form));
+    dispatch(addTodos(form));
     setForm(formInitialState);
   };
   const { title, author, priority, agree } = form;

@@ -1,1 +1,6 @@
-react-redux redux redux-devtools-extension
+create json server
+run json server
+add axios
+add own middlewares old and new way
+create own middleware (logger)
+add get and post async action
